@@ -1,0 +1,137 @@
+/* @import url('https://fonts.googleapis.com Alguma fonte'); */
+
+:root {
+
+    --primary-color: #622F7A;
+    --secondary-color: #5C2C72;
+    --tertiary-color: #49235A;
+
+    --glass-color: #8b4f009a;
+    --navbar-color: #6b3000ee;
+    --dark-brown: #5f2b00fd;
+
+
+}
+
+/* Global css variables -------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    overflow: hidden;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background-image: url('../imgs/steampunk-wallpaper-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    justify-content: space-between;
+    background: var(--navbar-color);
+}
+
+.logo {
+    background: url('../imgs/Steampunk-heart.png');
+    margin-left: 30px;
+    width: 10%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.nav-itens {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    /* cursor: url('../imgs/smoke-effect.gif'), auto; */
+}
+
+.main-box {
+    width: 60%;
+    height: 70%;
+    background: var(--glass-color);
+    border: 3px dotted var(--navbar-color);
+}
+
+/* ----------------------------------------------------------------------- */
+/* Gears */
+.gear-2 {
+    width: 550px;
+    height: 550px;
+    background-image: url('../imgs/gear-2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: contrast(150%);
+
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    animation: rotate-gear 60s linear infinite;
+}
+
+.gear-3 {
+    width: 250px;
+    height: 250px;
+    background-image: url('../imgs/gear-3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: contrast(150%);
+
+    position: absolute;
+    bottom: -5%;
+    right: -3%;
+    animation: rotate-gear 60s linear infinite reverse;
+}
+
+
+/* ----------------------------------------------------------------------- */
+/* Keyframes */
+@keyframes rotate-gear {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
