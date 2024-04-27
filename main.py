@@ -7,10 +7,10 @@ app = FastAPI()
 
 def process_pcap(file_path: str) -> dict:
     pcap_data = rdpcap(file_path)
-    # Process pcap data here and create report
+    
     report = {
         "packet_count": len(pcap_data),
-        # Add more analysis if needed
+
     }
     return report
 
