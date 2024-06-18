@@ -209,6 +209,9 @@ body {
     right: -10%;
 }
 
+.invisible {
+    opacity: 0;
+}
 
 /* ----------------------------------------------------------------------- */
 /* Troca para estilo cyberpunk */

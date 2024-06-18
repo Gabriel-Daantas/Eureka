@@ -1,6 +1,137 @@
+/* @import url('https://fonts.googleapis.com Alguma fonte'); */
+
+:root {
+
+    --glass-color-1: #92007291;
+    --border-color-1: #ff25d0ee;
+
+    --glass-color-2: #00970891;
+    --border-color-2: #7cff25ee;
+
+}
+
+/* Global css variables -------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    overflow: hidden;
+}
+
+.tela-branca {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: 2s;
+    z-index: 999;
+}
+
+.background-cyberpunk {
+    width: 100%;
+    height: 100%;
+    background-image: url('../imgs/cyberpunk-background.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    animation: colorChange 5s infinite;
+    filter: contrast(0%);
+}
+
+.cyberpunk-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.icone-return {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-image: url('../imgs/cyber-circle.png');
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 999;
+    transition: 1.5s;
+    filter: drop-shadow(0 0 10px #c0c0c0) drop-shadow(0 0 20px #c0c0c0) drop-shadow(0 0 40px #c0c0c0);
+    transition: 3s;
+    /* animation: rotate 10s linear infinite; */
+}
+
+.icone-return:hover {
+    transform: scale(1.2) rotate(360deg);
+}
 
 
+.cyberbox-1 {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-5%, -65%);
+    width: 60%;
+    height: 55%;
+    background: var(--glass-color-1);
+    border: 10px double var(--border-color-1);
+
+}
+
+.cyberbox-2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(5%, -25%);
+    width: 40%;
+    height: 55%;
+    background: var(--glass-color-2);
+    border: 10px double var(--border-color-2);
+
+}
 
 
 /* ----------------------------------------------------------------------- */
 /* Keyframes */
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg) contrast(110%) brightness(120%);
+    }
+
+    25% {
+        filter: hue-rotate(90deg) contrast(110%) brightness(120%);
+    }
+
+    50% {
+        filter: hue-rotate(180deg) contrast(110%) brightness(120%);
+    }
+
+    75% {
+        filter: hue-rotate(270deg) contrast(110%) brightness(120%);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) contrast(110%) brightness(120%);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
