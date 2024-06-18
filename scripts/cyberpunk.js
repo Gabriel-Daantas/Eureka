@@ -1,20 +1,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    showWhitePage(false);
 
     document.querySelector('.icone-return').addEventListener('click', async function () {
         showGates(true);
-
-        await new Promise(resolve => setTimeout(resolve, 3800));
+        
+        await new Promise(resolve => setTimeout(resolve, 2300));
+        showWhitePage(true);
+        await new Promise(resolve => setTimeout(resolve, 1500));
         showGates(false);
-        document.querySelector('.background-steampunk').style.display = 'flex';
-        document.querySelector('.cyberpunk-container').classList.toggle('invisible');
-        document.querySelector('.tela-branca').style.opacity = 1;
-
 
         await new Promise(resolve => setTimeout(resolve, 1000));
-        document.querySelector('.tela-branca').style.opacity = 0;
-        switchPageInfos(true);
+
+        location.href = '../templates/home.html';
     })
 
 
@@ -44,13 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function switchPageInfos(bolean) {
+    async function showWhitePage(bolean) {
         if (bolean) {
-            document.title = "Steampunk Project";
+            document.querySelector('.tela-branca').classList.toggle('top-0');
+            document.querySelector('.tela-branca').style.zIndex = 999;
 
-            const newIcon = "../imgs/icon-gear-1.ico";
-            const favicon = document.getElementById('favicon');
-            favicon.href = newIcon;
+        } else {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            document.querySelector('.tela-branca').classList.toggle('top-0');
+
+            await new Promise(resolve => setTimeout(resolve, 500));
+            document.querySelector('.tela-branca').style.zIndex = 0;
         }
     }
 });

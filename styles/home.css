@@ -29,6 +29,21 @@ body {
     overflow: hidden;
 }
 
+.tela-branca {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition: 1.5s;
+    z-index: 999;
+    opacity: 0;
+    top: 0;
+}
+
+.top-0 {
+    opacity: 1;
+}
+
 .background-steampunk {
     width: 100%;
     height: 100%;
@@ -98,7 +113,7 @@ body {
     width: 50%;
     height: 100%;
     transition: 1s;
-    /* background-image: url('../imgs/divine-left-gate.gif'); */
+    background-image: url('../imgs/divine-left-gate.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -112,7 +127,7 @@ body {
     width: 50%;
     height: 100%;
     transition: 1s;
-    /* background-image: url('../imgs/divine-right-gate.gif'); */
+    background-image: url('../imgs/divine-right-gate.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
@@ -229,7 +244,7 @@ body {
     cursor: pointer;
     font-size: 40px;
     border-radius: 50%;
-    z-index: 999;
+    z-index: 2;
     transition: 1.5s;
     filter: drop-shadow(0 0 10px #c0c0c0) drop-shadow(0 0 20px #c0c0c0) drop-shadow(0 0 40px #c0c0c0);
 }

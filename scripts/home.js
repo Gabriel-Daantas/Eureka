@@ -1,19 +1,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    showWhitePage(false)
 
     document.querySelector('.cyber-style').addEventListener('click', async function () {
         showGates(true);
-
-        await new Promise(resolve => setTimeout(resolve, 3800));
+        
+        await new Promise(resolve => setTimeout(resolve, 2300));
+        showWhitePage(true);
+        await new Promise(resolve => setTimeout(resolve, 1500));
         showGates(false);
-        document.querySelector('.background-steampunk').style.display = 'none';
-        document.querySelector('.cyberpunk-container').classList.toggle('invisible');
-
 
         await new Promise(resolve => setTimeout(resolve, 1000));
-        document.querySelector('.tela-branca').style.opacity = 0;
-        switchPageInfos(true);
+
+        location.href = '../templates/cyberpunk.html';
     })
 
 
@@ -43,13 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function switchPageInfos(bolean) {
+    async function showWhitePage(bolean) {
         if (bolean) {
-            document.title = "Cyberpunk Project";
+            document.querySelector('.tela-branca').style.top = 0;
+            document.querySelector('.tela-branca').classList.toggle('top-0');
+            document.querySelector('.tela-branca').style.zIndex = 999;
 
-            const newIcon = "../imgs/cyber-eye.png";
-            const favicon = document.getElementById('favicon');
-            favicon.href = newIcon;
+        } else {
+            await new Promise(resolve => setTimeout(resolve, 500));
+            document.querySelector('.tela-branca').classList.toggle('top-0');
+
+            await new Promise(resolve => setTimeout(resolve, 1550));
+            document.querySelector('.tela-branca').style.top = '100%';
+            document.querySelector('.tela-branca').style.zIndex = 0;
         }
     }
 });
